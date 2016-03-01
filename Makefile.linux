@@ -9,7 +9,7 @@ TOP_PKG=go-transit
 
 CC=llvm-gcc
 
-#GOPATH=$(shell pwd)
+GOPATH=$(shell pwd)
 PWD=$(shell pwd)
 GOCMD=CGO_ENABLED=0 GOOS=linux GOARCH=amd64  GOPATH=$(GOPATH):$(PWD) go
 GOBUILD=$(GOCMD) build
