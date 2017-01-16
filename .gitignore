@@ -8,6 +8,7 @@ _obj
 _test
 bin
 log
+logs
 tmp
 Makefile
 # etc/*.json
