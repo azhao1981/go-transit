@@ -20,7 +20,10 @@ case "$1" in
   stop)
     echo "Stop $exec_name......"
     pid=`ps aux | grep -v grep | grep "$exec_name" | grep "${cfg}" | awk '{print $2}'`
-    (($pid)) && kill -9 $pid
+    # (($pid)) && kill -9 $pid
+    for p in $pid; do
+        kill -9 $p
+    done
     echo "Done"
     ;;
   stat)
@@ -29,7 +32,9 @@ case "$1" in
   restart)
     echo "Restart $exec_name......" >> $log_dir/stdout.log
     pid=`ps aux | grep -v grep | grep "$exec_name" | grep "${cfg}" | awk '{print $2}'`
-    (($pid)) && kill -9 $pid
+    for p in $pid; do
+        kill -9 $p
+    done
     sleep 1
     echo "Old server stoped ...... "
     ps aux | grep -v grep | grep "$exec_name" | grep "${cfg}"
