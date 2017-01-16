@@ -9,7 +9,7 @@ _test
 bin
 log
 tmp
-
+Makefile
 
 # Architecture specific extensions/prefixes
 *.[568vq]
