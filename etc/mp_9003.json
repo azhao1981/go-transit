@@ -1,0 +1,20 @@
+{
+    "comment": "可用本字段做注释用",
+    "configs": [
+        
+    ],
+    "listen": {
+        "host": "0.0.0.0",
+        "port": 9003,
+        "unix":"/tmp/go-transit.socket"
+    },
+    "default": {
+        "target_server": "https://mp.weixin.qq.com",
+        "redirect": false
+    },
+    "access_log_file": "log/mp_9003.access.log",
+    "error_log_file": "log/mp_9003.error.log",
+    "pprof_comment": "可通过 http://localhost:20003/debug/pprof/ 访问,go tool pprof --text http://localhost:10010/debug/pprof/profile,",
+    "pprof_httpd": "localhost:20003",
+    "admin_uri": "/go-transit"
+}
