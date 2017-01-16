@@ -6,7 +6,7 @@
     "listen": {
         "host": "0.0.0.0",
         "port": 9003,
-        "unix":"/tmp/go-transit.socket"
+        "unix":"/tmp/go-transit.9003.socket"
     },
     "default": {
         "target_server": "https://mp.weixin.qq.com",

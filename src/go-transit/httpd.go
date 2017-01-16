@@ -45,9 +45,9 @@ type Server struct {
 //bc 背景颜色
 //fc 前景(文字)颜色
 func ansi_color(bc int, fc int, s string) string {
-	// if len(s) > MAX_LOG_BYTE {
-	// 	return fmt.Sprintf("\x1b[%d;%dm%s%s", 40+bc, 30+fc, "......", CLR_N)
-	// }
+	if len(s) > MAX_LOG_BYTE {
+		return fmt.Sprintf("\x1b[%d;%dm%s%s", 40+bc, 30+fc, "......", CLR_N)
+	}
 	return fmt.Sprintf("\x1b[%d;%dm%s%s", 40+bc, 30+fc, s, CLR_N)
 }
 
