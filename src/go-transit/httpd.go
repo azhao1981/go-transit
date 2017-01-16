@@ -330,7 +330,11 @@ func (s Server) handler_func(w http.ResponseWriter, r *http.Request) {
 	case "GET", "HEAD":
 		req, err = http.NewRequest(r.Method, query_url.String(), nil)
 	case "POST":
+		g_env.AccessLog.Println(r.Method)
+		g_env.AccessLog.Println(query_url.String())
+		g_env.AccessLog.Println(bytes.NewReader(raw_bytes))
 		req, err = http.NewRequest(r.Method, query_url.String(), bytes.NewReader(raw_bytes))
+		g_env.AccessLog.Println("xxx")
 		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	default:
 		http.Error(w, "MethodNotAllowed", http.StatusMethodNotAllowed)
